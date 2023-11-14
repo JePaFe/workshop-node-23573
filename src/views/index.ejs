@@ -4,7 +4,7 @@
   <h1>Tareas</h1>
 
   <h2>Crear tarea</h2>
-  
+
   <form action="/" method="post">
     <div>
       <label for="title">Nombre: </label>
@@ -22,3 +22,14 @@
 </main>
 
 <%- contentFor('scripts') %>
+<script>
+  document.addEventListener("submit", (event) => {
+    if (event.target.classList.contains("form-delete")) {
+      event.preventDefault();
+
+      if (confirm("¿Esta seguro?")) {
+        event.target.submit();
+      }
+    }
+  });
+</script>
